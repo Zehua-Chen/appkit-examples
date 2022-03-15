@@ -9,5 +9,8 @@ import Cocoa
 
 class Book: NSObject, Codable {
   @objc
+  dynamic var name: String = "New Book"
+  
+  @objc
   dynamic var chapters: [URL] = []
 }

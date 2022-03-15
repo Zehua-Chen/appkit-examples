@@ -16,7 +16,7 @@ class ChaptersViewController: NSViewController {
   override var representedObject: Any? {
     didSet {
       book = representedObject as? Book
-      book?.addObserver(self, forKeyPath: #keyPath(Book.chapters), context: nil)
+      book?.addObserver(self, forKeyPath: #keyPath(Book.chapters), options: [.initial], context: nil)
     }
   }
   
@@ -100,8 +100,8 @@ extension ChaptersViewController: NSOutlineViewDelegate {
     let cellView = outlineView.makeView(withIdentifier: .init(rawValue: "Sidebar Cell View"), owner: nil) as! NSTableCellView
     
     switch item {
-    case is Book:
-      cellView.textField!.stringValue = "Book"
+    case let book as Book:
+      cellView.textField!.stringValue = book.name
     case let chapter as URL:
       cellView.textField!.stringValue = chapter.path
     default:
