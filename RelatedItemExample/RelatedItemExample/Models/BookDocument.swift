@@ -13,7 +13,9 @@ class BookDocument: NSDocument {
 
   override init() {
     super.init()
-    // Add your subclass-specific initialization here.
+    
+    content.fileURL = primaryPresentedItemURL
+    content.folderURL = presentedItemURL
   }
 
   override class var autosavesInPlace: Bool {
@@ -27,7 +29,7 @@ class BookDocument: NSDocument {
   override var presentedItemURL: URL? {
     guard let fileURL = fileURL else { return nil }
 
-    let folder = fileURL.deletingLastPathComponent()
+    let folder = fileURL.deletingPathExtension()
 
     return folder
   }
@@ -38,6 +40,9 @@ class BookDocument: NSDocument {
     let windowController = storyboard.instantiateController(withIdentifier: NSStoryboard.SceneIdentifier("Book Window Controller")) as! NSWindowController
     let contentVC = windowController.contentViewController!
     
+    content.folderURL = presentedItemURL
+    content.fileURL = primaryPresentedItemURL
+    
     contentVC.representedObject = content
     
     self.addWindowController(windowController)
@@ -45,11 +50,20 @@ class BookDocument: NSDocument {
 
   override func data(ofType typeName: String) throws -> Data {
     let encoder = JSONEncoder()
+    content.chapters = content.chapters
+      .map { chapter in return URL(fileURLWithPath: chapter.path, relativeTo: fileURL) }
+    
     return try encoder.encode(content)
   }
 
   override func read(from data: Data, ofType typeName: String) throws {
     let decoder = JSONDecoder()
+//    let fileManager = FileManager.default
+    
+//    if !fileManager.fileExists(atPath: presentedItemURL!.path) {
+//      try fileManager.createDirectory(at: presentedItemURL!, withIntermediateDirectories: true)
+//    }
+    
     content = try decoder.decode(Book.self, from: data)
   }
 }

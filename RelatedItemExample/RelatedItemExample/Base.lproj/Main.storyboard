@@ -62,7 +62,7 @@
                                     <items>
                                         <menuItem title="New Book" keyEquivalent="n" id="Was-JA-tGl">
                                             <connections>
-                                                <action selector="newDocument:" target="Ady-hI-5gd" id="4Si-XN-c54"/>
+                                                <action selector="newDocument:" target="Ady-hI-5gd" id="1x8-BE-9yv"/>
                                             </connections>
                                         </menuItem>
                                         <menuItem title="New Chapter" id="n4i-cG-f7h">
@@ -742,7 +742,7 @@
             <objects>
                 <viewController id="nZc-b1-GfL" customClass="ChaptersViewController" customModule="RelatedItemExample" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="9sv-f0-hYY">
-                        <rect key="frame" x="0.0" y="0.0" width="200" height="305"/>
+                        <rect key="frame" x="0.0" y="0.0" width="200" height="263"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <scrollView autohidesScrollers="YES" horizontalLineScroll="32" horizontalPageScroll="10" verticalLineScroll="32" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QHg-wn-0NQ">
@@ -816,7 +816,7 @@
                         </subviews>
                         <constraints>
                             <constraint firstItem="oVT-My-Ay6" firstAttribute="bottom" secondItem="QHg-wn-0NQ" secondAttribute="bottom" id="cPb-3E-vL5"/>
-                            <constraint firstItem="QHg-wn-0NQ" firstAttribute="top" secondItem="oVT-My-Ay6" secondAttribute="top" constant="42" id="dx3-9i-bmR"/>
+                            <constraint firstItem="QHg-wn-0NQ" firstAttribute="top" secondItem="oVT-My-Ay6" secondAttribute="top" id="dx3-9i-bmR"/>
                             <constraint firstItem="QHg-wn-0NQ" firstAttribute="leading" secondItem="oVT-My-Ay6" secondAttribute="leading" id="tvm-Bp-7OW"/>
                             <constraint firstItem="QHg-wn-0NQ" firstAttribute="trailing" secondItem="oVT-My-Ay6" secondAttribute="trailing" id="yLi-bw-3wO"/>
                         </constraints>

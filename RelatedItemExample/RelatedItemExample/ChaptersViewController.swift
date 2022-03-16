@@ -35,18 +35,26 @@ class ChaptersViewController: NSViewController {
   }
   
   @IBAction func newChapter(_ sender: Any?) {
-    Task {
-      let openPanel = NSOpenPanel()
-      let response = await openPanel.beginSheetModal(for: view.window!)
-      
-      switch response {
-      case .OK:
-        if let url = openPanel.url {
-          book?.chapters.append(url)
-        }
-      default:
-        break
+    let manager = FileManager.default
+    
+    if let folderURL = book?.folderURL {
+      if !manager.fileExists(atPath: folderURL.path) {
+        try! manager.createDirectory(at: folderURL, withIntermediateDirectories: true)
       }
+    }
+    
+    Task {
+//      let savePanel = NSSavePanel()
+//      let response = await savePanel.beginSheetModal(for: view.window!)
+//
+//      switch response {
+//      case .OK:
+//        if let url = savePanel.url {
+//          book?.chapters.append(url)
+//        }
+//      default:
+//        break
+//      }
     }
   }
 }
