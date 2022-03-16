@@ -681,7 +681,7 @@
                         <outlet property="delegate" destination="Voe-Tx-rLC" id="PrD-fu-P6m"/>
                     </connections>
                 </application>
-                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="RelatedItemExample" customModuleProvider="target"/>
+                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="BookMaker" customModuleProvider="target"/>
                 <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -719,7 +719,7 @@
         <!--Split View Controller-->
         <scene sceneID="FxJ-0N-i0r">
             <objects>
-                <splitViewController id="Zfx-gx-s0M" customClass="SplitViewController" customModule="RelatedItemExample" customModuleProvider="target" sceneMemberID="viewController">
+                <splitViewController id="Zfx-gx-s0M" customClass="SplitViewController" customModule="BookMaker" customModuleProvider="target" sceneMemberID="viewController">
                     <splitViewItems>
                         <splitViewItem canCollapse="YES" holdingPriority="260" behavior="sidebar" id="63Q-yJ-ZlA"/>
                         <splitViewItem id="VnJ-Vg-2Re"/>
@@ -740,19 +740,19 @@
         <!--Chapters View Controller-->
         <scene sceneID="jnv-rs-K3d">
             <objects>
-                <viewController id="nZc-b1-GfL" customClass="ChaptersViewController" customModule="RelatedItemExample" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="nZc-b1-GfL" customClass="ChaptersViewController" customModule="BookMaker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="9sv-f0-hYY">
-                        <rect key="frame" x="0.0" y="0.0" width="200" height="263"/>
+                        <rect key="frame" x="0.0" y="0.0" width="198" height="263"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <scrollView autohidesScrollers="YES" horizontalLineScroll="32" horizontalPageScroll="10" verticalLineScroll="32" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QHg-wn-0NQ">
-                                <rect key="frame" x="0.0" y="0.0" width="200" height="211"/>
+                            <scrollView borderType="none" autohidesScrollers="YES" horizontalLineScroll="32" horizontalPageScroll="10" verticalLineScroll="32" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QHg-wn-0NQ">
+                                <rect key="frame" x="0.0" y="0.0" width="198" height="211"/>
                                 <clipView key="contentView" drawsBackground="NO" id="6HJ-0n-J8N">
-                                    <rect key="frame" x="1" y="1" width="198" height="209"/>
-                                    <autoresizingMask key="autoresizingMask"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="198" height="211"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <outlineView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" tableStyle="sourceList" selectionHighlightStyle="sourceList" columnReordering="NO" columnResizing="NO" multipleSelection="NO" autosaveColumns="NO" rowHeight="32" usesAutomaticRowHeights="YES" viewBased="YES" indentationPerLevel="13" outlineTableColumn="exW-X9-tLo" id="lGm-t7-P3G">
-                                            <rect key="frame" x="0.0" y="0.0" width="198" height="209"/>
+                                        <outlineView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" selectionHighlightStyle="sourceList" columnReordering="NO" columnResizing="NO" multipleSelection="NO" autosaveColumns="NO" rowHeight="32" usesAutomaticRowHeights="YES" viewBased="YES" indentationPerLevel="13" outlineTableColumn="exW-X9-tLo" id="lGm-t7-P3G">
+                                            <rect key="frame" x="0.0" y="0.0" width="198" height="211"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <size key="intercellSpacing" width="3" height="0.0"/>
                                             <color key="backgroundColor" name="_sourceListBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -805,7 +805,7 @@
                                     <nil key="backgroundColor"/>
                                 </clipView>
                                 <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="gTu-qa-MIn">
-                                    <rect key="frame" x="1" y="230" width="198" height="16"/>
+                                    <rect key="frame" x="0.0" y="195" width="198" height="16"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                                 <scroller key="verticalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="NO" id="oEW-XL-neP">

@@ -21,7 +21,7 @@ class ChaptersViewController: NSViewController {
   }
   
   override func viewDidLoad() {
-    chaptersList.style = .inset
+//    chaptersList.style = 
   }
   
   @MainActor
