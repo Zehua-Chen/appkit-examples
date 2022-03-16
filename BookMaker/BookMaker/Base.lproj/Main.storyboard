@@ -685,7 +685,56 @@
                 <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="0.0"/>
+            <point key="canvasLocation" x="93" y="-70"/>
+        </scene>
+        <!--Window Controller-->
+        <scene sceneID="Tfy-g9-Zoc">
+            <objects>
+                <windowController storyboardIdentifier="Welcome Window Controller" id="oTh-Dz-UyG" sceneMemberID="viewController">
+                    <window key="window" title="Welcome" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" titlebarAppearsTransparent="YES" id="Uu9-F1-S3r">
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES" fullSizeContentView="YES"/>
+                        <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+                        <rect key="contentRect" x="211" y="267" width="480" height="270"/>
+                        <rect key="screenRect" x="0.0" y="0.0" width="1512" height="944"/>
+                        <view key="contentView" id="zdH-yc-8Rk">
+                            <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                        </view>
+                        <connections>
+                            <outlet property="delegate" destination="oTh-Dz-UyG" id="aKs-oh-mcd"/>
+                        </connections>
+                    </window>
+                    <connections>
+                        <segue destination="pu5-ZD-QVw" kind="relationship" relationship="window.shadowedContentViewController" id="Lkp-i9-YY6"/>
+                    </connections>
+                </windowController>
+                <customObject id="onS-Tw-M32" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-621" y="322"/>
+        </scene>
+        <!--Welcome View Controller-->
+        <scene sceneID="bbZ-Tp-SXS">
+            <objects>
+                <viewController id="pu5-ZD-QVw" customClass="WelcomeViewController" customModule="BookMaker" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" wantsLayer="YES" id="RgC-KA-VYx">
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <visualEffectView blendingMode="behindWindow" material="sidebar" state="followsWindowActiveState" translatesAutoresizingMaskIntoConstraints="NO" id="Pdy-V2-e9a">
+                                <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                            </visualEffectView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="Pdy-V2-e9a" firstAttribute="leading" secondItem="RgC-KA-VYx" secondAttribute="leading" id="4xf-uq-hPR"/>
+                            <constraint firstItem="Pdy-V2-e9a" firstAttribute="top" secondItem="RgC-KA-VYx" secondAttribute="top" id="EhE-Xu-ZPQ"/>
+                            <constraint firstAttribute="trailing" secondItem="Pdy-V2-e9a" secondAttribute="trailing" id="Fbq-XA-Dlu"/>
+                            <constraint firstAttribute="bottom" secondItem="Pdy-V2-e9a" secondAttribute="bottom" id="wFQ-Lm-vFx"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <customObject id="gKy-dD-ZP1" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-621" y="835"/>
         </scene>
         <!--Window Controller-->
         <scene sceneID="HYi-c6-xFS">
@@ -829,7 +878,7 @@
                 </viewController>
                 <customObject id="gq2-f1-26Z" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="714" y="449.5"/>
+            <point key="canvasLocation" x="-79" y="1239"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="nWo-LF-1hK">
@@ -844,7 +893,7 @@
                 </viewController>
                 <customObject id="t2m-3N-rbc" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="752" y="842"/>
+            <point key="canvasLocation" x="199" y="1257"/>
         </scene>
     </scenes>
 </document>

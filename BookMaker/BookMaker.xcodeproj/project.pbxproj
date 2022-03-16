@@ -15,6 +15,7 @@
 		67633EBF27E1482900BE36F1 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67633EBE27E1482900BE36F1 /* Book.swift */; };
 		67633EC127E1483600BE36F1 /* Chapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67633EC027E1483600BE36F1 /* Chapter.swift */; };
 		67633EC327E14CBF00BE36F1 /* ChaptersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67633EC227E14CBF00BE36F1 /* ChaptersViewController.swift */; };
+		67633EC627E1706A00BE36F1 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67633EC427E1706A00BE36F1 /* WelcomeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		67633EBE27E1482900BE36F1 /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 		67633EC027E1483600BE36F1 /* Chapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chapter.swift; sourceTree = "<group>"; };
 		67633EC227E14CBF00BE36F1 /* ChaptersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChaptersViewController.swift; sourceTree = "<group>"; };
+		67633EC427E1706A00BE36F1 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +67,7 @@
 				67633EAB27E1444400BE36F1 /* AppDelegate.swift */,
 				67633EAD27E1444400BE36F1 /* SplitViewController.swift */,
 				67633EC227E14CBF00BE36F1 /* ChaptersViewController.swift */,
+				67633EC427E1706A00BE36F1 /* WelcomeViewController.swift */,
 				67633EB127E1444500BE36F1 /* Assets.xcassets */,
 				67633EB327E1444500BE36F1 /* Main.storyboard */,
 				67633EB627E1444500BE36F1 /* Info.plist */,
@@ -159,6 +162,7 @@
 				67633EAE27E1444400BE36F1 /* SplitViewController.swift in Sources */,
 				67633EAC27E1444400BE36F1 /* AppDelegate.swift in Sources */,
 				67633EB027E1444400BE36F1 /* BookDocument.swift in Sources */,
+				67633EC627E1706A00BE36F1 /* WelcomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

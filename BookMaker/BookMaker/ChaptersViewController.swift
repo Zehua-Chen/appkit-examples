@@ -21,7 +21,7 @@ class ChaptersViewController: NSViewController {
   }
   
   override func viewDidLoad() {
-//    chaptersList.style = 
+    super.viewDidLoad()
   }
   
   @MainActor
