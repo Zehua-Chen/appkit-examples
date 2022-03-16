@@ -35,10 +35,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
   }
   
   func showWelcomeWindowIfNeeded() {
-    let docCount = NSDocumentController.shared.documents.count
     let windowCount = NSApplication.shared.windows.count
     
-    if (docCount + windowCount) == 0 {
+    if windowCount == 0 {
       let storyboard = NSStoryboard.main
       let windowController = storyboard?.instantiateController(withIdentifier: "Welcome Window Controller") as? NSWindowController
       
