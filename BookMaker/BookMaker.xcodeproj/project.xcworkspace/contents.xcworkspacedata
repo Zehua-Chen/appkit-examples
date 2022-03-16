@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:">
+      location = "self:/Users/zehuachen/Developer/examples/appkit-examples/BookMaker/BookMaker.xcodeproj">
    </FileRef>
 </Workspace>

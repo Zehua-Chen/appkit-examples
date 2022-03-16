@@ -18,14 +18,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		67633EA827E1444400BE36F1 /* Related Item Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Related Item Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		67633EA827E1444400BE36F1 /* Book Maker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Book Maker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		67633EAB27E1444400BE36F1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		67633EAD27E1444400BE36F1 /* SplitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitViewController.swift; sourceTree = "<group>"; };
 		67633EAF27E1444400BE36F1 /* BookDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDocument.swift; sourceTree = "<group>"; };
 		67633EB127E1444500BE36F1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		67633EB427E1444500BE36F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		67633EB627E1444500BE36F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		67633EB727E1444500BE36F1 /* RelatedItemExample.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RelatedItemExample.entitlements; sourceTree = "<group>"; };
+		67633EB727E1444500BE36F1 /* BookMaker.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BookMaker.entitlements; sourceTree = "<group>"; };
 		67633EBE27E1482900BE36F1 /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 		67633EC027E1483600BE36F1 /* Chapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chapter.swift; sourceTree = "<group>"; };
 		67633EC227E14CBF00BE36F1 /* ChaptersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChaptersViewController.swift; sourceTree = "<group>"; };
@@ -45,7 +45,7 @@
 		67633E9F27E1444400BE36F1 = {
 			isa = PBXGroup;
 			children = (
-				67633EAA27E1444400BE36F1 /* RelatedItemExample */,
+				67633EAA27E1444400BE36F1 /* BookMaker */,
 				67633EA927E1444400BE36F1 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -53,12 +53,12 @@
 		67633EA927E1444400BE36F1 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				67633EA827E1444400BE36F1 /* Related Item Example.app */,
+				67633EA827E1444400BE36F1 /* Book Maker.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		67633EAA27E1444400BE36F1 /* RelatedItemExample */ = {
+		67633EAA27E1444400BE36F1 /* BookMaker */ = {
 			isa = PBXGroup;
 			children = (
 				67633EBD27E1480800BE36F1 /* Models */,
@@ -68,9 +68,9 @@
 				67633EB127E1444500BE36F1 /* Assets.xcassets */,
 				67633EB327E1444500BE36F1 /* Main.storyboard */,
 				67633EB627E1444500BE36F1 /* Info.plist */,
-				67633EB727E1444500BE36F1 /* RelatedItemExample.entitlements */,
+				67633EB727E1444500BE36F1 /* BookMaker.entitlements */,
 			);
-			path = RelatedItemExample;
+			path = BookMaker;
 			sourceTree = "<group>";
 		};
 		67633EBD27E1480800BE36F1 /* Models */ = {
@@ -86,9 +86,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		67633EA727E1444400BE36F1 /* RelatedItemExample */ = {
+		67633EA727E1444400BE36F1 /* BookMaker */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 67633EBA27E1444500BE36F1 /* Build configuration list for PBXNativeTarget "RelatedItemExample" */;
+			buildConfigurationList = 67633EBA27E1444500BE36F1 /* Build configuration list for PBXNativeTarget "BookMaker" */;
 			buildPhases = (
 				67633EA427E1444400BE36F1 /* Sources */,
 				67633EA527E1444400BE36F1 /* Frameworks */,
@@ -98,9 +98,9 @@
 			);
 			dependencies = (
 			);
-			name = RelatedItemExample;
+			name = BookMaker;
 			productName = RelatedItemExample;
-			productReference = 67633EA827E1444400BE36F1 /* Related Item Example.app */;
+			productReference = 67633EA827E1444400BE36F1 /* Book Maker.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -118,7 +118,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 67633EA327E1444400BE36F1 /* Build configuration list for PBXProject "RelatedItemExample" */;
+			buildConfigurationList = 67633EA327E1444400BE36F1 /* Build configuration list for PBXProject "BookMaker" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -131,7 +131,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				67633EA727E1444400BE36F1 /* RelatedItemExample */,
+				67633EA727E1444400BE36F1 /* BookMaker */,
 			);
 		};
 /* End PBXProject section */
@@ -294,14 +294,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = RelatedItemExample/RelatedItemExample.entitlements;
+				CODE_SIGN_ENTITLEMENTS = BookMaker/BookMaker.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = SYDGB25RXW;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = RelatedItemExample/Info.plist;
+				INFOPLIST_FILE = BookMaker/Info.plist;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INFOPLIST_KEY_NSMainStoryboardFile = Main;
 				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
@@ -310,9 +310,9 @@
 					"@executable_path/../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.zehuachen-examples.RelatedItemExample";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.zehuachen-examples.BookMaker";
 				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
-				PRODUCT_NAME = "Related Item Example";
+				PRODUCT_NAME = "Book Maker";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 			};
@@ -323,14 +323,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = RelatedItemExample/RelatedItemExample.entitlements;
+				CODE_SIGN_ENTITLEMENTS = BookMaker/BookMaker.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = SYDGB25RXW;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = RelatedItemExample/Info.plist;
+				INFOPLIST_FILE = BookMaker/Info.plist;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INFOPLIST_KEY_NSMainStoryboardFile = Main;
 				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
@@ -339,9 +339,9 @@
 					"@executable_path/../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.zehuachen-examples.RelatedItemExample";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.zehuachen-examples.BookMaker";
 				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
-				PRODUCT_NAME = "Related Item Example";
+				PRODUCT_NAME = "Book Maker";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 			};
@@ -350,7 +350,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		67633EA327E1444400BE36F1 /* Build configuration list for PBXProject "RelatedItemExample" */ = {
+		67633EA327E1444400BE36F1 /* Build configuration list for PBXProject "BookMaker" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				67633EB827E1444500BE36F1 /* Debug */,
@@ -359,7 +359,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		67633EBA27E1444500BE36F1 /* Build configuration list for PBXNativeTarget "RelatedItemExample" */ = {
+		67633EBA27E1444500BE36F1 /* Build configuration list for PBXNativeTarget "BookMaker" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				67633EBB27E1444500BE36F1 /* Debug */,

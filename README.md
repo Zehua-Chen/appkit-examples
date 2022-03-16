@@ -2,6 +2,9 @@
 
 ## Examples
 
-### System Capability
+### Book Maker
 
-- [Related Items](RelatedItemExample/README.md): demonstrate the use of [related items](https://developer.apple.com/library/archive/documentation/Security/Conceptual/AppSandboxDesignGuide/AppSandboxInDepth/AppSandboxInDepth.html#//apple_ref/doc/uid/TP40011183-CH3-SW22) in sandboxed macOS app
+[Book Maker](BookMaker/README.md) is a document based app. It uses the following
+concepts
+
+- [Related items](https://developer.apple.com/library/archive/documentation/Security/Conceptual/AppSandboxDesignGuide/AppSandboxInDepth/AppSandboxInDepth.html#//apple_ref/doc/uid/TP40011183-CH3-SW22)
