@@ -20,6 +20,9 @@ class Book: NSObject, Codable {
   dynamic var folderURL: URL?
   
   @objc
+  dynamic var openedChapter: URL?
+  
+  @objc
   dynamic var name: String = "New Book"
   
   @objc

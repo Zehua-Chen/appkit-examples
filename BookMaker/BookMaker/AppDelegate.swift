@@ -53,7 +53,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
       panel.allowedContentTypes = [UTType("com.zehuachen-examples.book")!]
         
       let fileManager = FileManager.default
-    
+      
+      // TODO: run modal when there is no window
+      // TODO: open new document
       if let window = NSApplication.shared.mainWindow {
         let response = await panel.beginSheetModal(for: window)
 

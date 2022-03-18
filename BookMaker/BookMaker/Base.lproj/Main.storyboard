@@ -973,16 +973,56 @@
             </objects>
             <point key="canvasLocation" x="-79" y="1239"/>
         </scene>
-        <!--View Controller-->
+        <!--Chapter View Controller-->
         <scene sceneID="nWo-LF-1hK">
             <objects>
-                <viewController id="ghw-li-hCJ" sceneMemberID="viewController">
+                <viewController id="ghw-li-hCJ" customClass="ChapterViewController" customModule="BookMaker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="CFD-OJ-dYH">
                         <rect key="frame" x="0.0" y="0.0" width="302" height="300"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <scrollView borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pk4-6p-RTM">
+                                <rect key="frame" x="0.0" y="0.0" width="302" height="248"/>
+                                <clipView key="contentView" drawsBackground="NO" id="xMs-L0-d1J">
+                                    <rect key="frame" x="0.0" y="0.0" width="302" height="248"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <textView importsGraphics="NO" richText="NO" verticallyResizable="YES" findStyle="bar" spellingCorrection="YES" smartInsertDelete="YES" id="PW8-pL-3Ze">
+                                            <rect key="frame" x="0.0" y="0.0" width="302" height="248"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            <size key="minSize" width="302" height="248"/>
+                                            <size key="maxSize" width="302" height="10000000"/>
+                                            <color key="insertionPointColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <connections>
+                                                <outlet property="delegate" destination="ghw-li-hCJ" id="gYM-Af-cSG"/>
+                                            </connections>
+                                        </textView>
+                                    </subviews>
+                                </clipView>
+                                <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="Gxg-iW-hMs">
+                                    <rect key="frame" x="-100" y="-100" width="240" height="16"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                                <scroller key="verticalScroller" wantsLayer="YES" verticalHuggingPriority="750" horizontal="NO" id="DrE-Wm-b0T">
+                                    <rect key="frame" x="286" y="0.0" width="16" height="248"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                            </scrollView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="pk4-6p-RTM" firstAttribute="top" secondItem="F6r-8u-swB" secondAttribute="top" id="Dds-7Z-ahZ"/>
+                            <constraint firstItem="F6r-8u-swB" firstAttribute="trailing" secondItem="pk4-6p-RTM" secondAttribute="trailing" id="c1C-qV-QOt"/>
+                            <constraint firstItem="pk4-6p-RTM" firstAttribute="leading" secondItem="F6r-8u-swB" secondAttribute="leading" id="f5s-BO-4iI"/>
+                            <constraint firstItem="F6r-8u-swB" firstAttribute="bottom" secondItem="pk4-6p-RTM" secondAttribute="bottom" id="gBY-kE-on9"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="F6r-8u-swB"/>
                         <viewLayoutGuide key="layoutMargins" id="DB0-YX-7G9"/>
                     </view>
+                    <connections>
+                        <outlet property="textView" destination="PW8-pL-3Ze" id="4Bb-m3-Kst"/>
+                    </connections>
                 </viewController>
                 <customObject id="t2m-3N-rbc" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>

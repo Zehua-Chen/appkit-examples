@@ -55,7 +55,7 @@ class ChaptersViewController: NSViewController {
       
       let fileManager = FileManager.default
       
-      savePanel.allowedContentTypes = [UTType("com.zehuachen-examples.book")!]
+      savePanel.allowedContentTypes = [UTType("com.zehuachen-examples.chapter")!]
 
       let response = await savePanel.beginSheetModal(for: view.window!)
       
@@ -64,8 +64,7 @@ class ChaptersViewController: NSViewController {
         guard let url = savePanel.url else { return }
         guard let book = book else { return }
         
-        let chapter = try! JSONEncoder().encode(Chapter())
-        guard fileManager.createFile(atPath: url.path, contents: chapter) else {
+        guard fileManager.createFile(atPath: url.path, contents: nil) else {
           fatalError()
         }
       
@@ -99,6 +98,8 @@ class ChaptersViewController: NSViewController {
     }
   }
 }
+
+//MARK: - NSOutlineViewDataSource
 
 extension ChaptersViewController: NSOutlineViewDataSource {
   func outlineView(_ outlineView: NSOutlineView, child index: Int, ofItem item: Any?) -> Any {
@@ -144,7 +145,13 @@ extension ChaptersViewController: NSOutlineViewDataSource {
   }
 }
 
+//MARK: - NSOutlineViewDelegate
+
 extension ChaptersViewController: NSOutlineViewDelegate {
+  func outlineViewSelectionDidChange(_ notification: Notification) {
+    book?.openedChapter = chaptersList.item(atRow: chaptersList.selectedRow) as? URL
+  }
+  
   func outlineView(_ outlineView: NSOutlineView, viewFor tableColumn: NSTableColumn?, item: Any) -> NSView? {
     let cellView = outlineView.makeView(withIdentifier: .init(rawValue: "Sidebar Cell View"), owner: nil) as! NSTableCellView
     
