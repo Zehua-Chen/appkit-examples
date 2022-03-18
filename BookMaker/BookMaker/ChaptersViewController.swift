@@ -21,6 +21,11 @@ class ChaptersViewController: NSViewController {
     }
   }
   
+  func save() {
+    NSApplication.shared
+      .sendAction(#selector(BookDocument.save(_:)), to: nil, from: self)
+  }
+  
   override func viewDidLoad() {
     super.viewDidLoad()
   }
@@ -65,9 +70,29 @@ class ChaptersViewController: NSViewController {
         }
       
         book.chapters.append(url)
+        save()
+      default:
+        break
+      }
+    }
+  }
+  
+  @IBAction func openChapter(_ sender: Any?) {
+    Task {
+      guard let book = book else { return }
+      
+      let panel = NSOpenPanel()
+      panel.directoryURL = book.folderURL
+      
+      let response = await panel.beginSheetModal(for: view.window!)
+      
+      switch response {
+      case .OK:
+        guard let url = panel.url else { return }
         
         
-        NSDocumentController.shared.saveAllDocuments(self)
+        book.chapters.append(url)
+        save()
       default:
         break
       }
