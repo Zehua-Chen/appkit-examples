@@ -6,6 +6,7 @@
 //
 
 import Cocoa
+import UniformTypeIdentifiers
 
 @MainActor
 class ChaptersViewController: NSViewController {
@@ -44,17 +45,32 @@ class ChaptersViewController: NSViewController {
     }
     
     Task {
-//      let savePanel = NSSavePanel()
-//      let response = await savePanel.beginSheetModal(for: view.window!)
-//
-//      switch response {
-//      case .OK:
-//        if let url = savePanel.url {
-//          book?.chapters.append(url)
-//        }
-//      default:
-//        break
-//      }
+      let savePanel = NSSavePanel()
+      savePanel.directoryURL = book!.folderURL!
+      
+      let fileManager = FileManager.default
+      
+      savePanel.allowedContentTypes = [UTType("com.zehuachen-examples.book")!]
+
+      let response = await savePanel.beginSheetModal(for: view.window!)
+      
+      switch response {
+      case .OK:
+        guard let url = savePanel.url else { return }
+        guard let book = book else { return }
+        
+        let chapter = try! JSONEncoder().encode(Chapter())
+        guard fileManager.createFile(atPath: url.path, contents: chapter) else {
+          fatalError()
+        }
+      
+        book.chapters.append(url)
+        
+        
+        NSDocumentController.shared.saveAllDocuments(self)
+      default:
+        break
+      }
     }
   }
 }
@@ -111,7 +127,9 @@ extension ChaptersViewController: NSOutlineViewDelegate {
     case let book as Book:
       cellView.textField!.stringValue = book.name
     case let chapter as URL:
-      cellView.textField!.stringValue = chapter.path
+      cellView.textField!.stringValue = chapter
+        .deletingPathExtension()
+        .pathComponents.last!
     default:
       fatalError()
     }

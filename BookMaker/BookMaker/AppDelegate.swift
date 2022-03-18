@@ -5,7 +5,9 @@
 //  Created by Zehua Chen on 3/15/22.
 //
 
+import Foundation
 import Cocoa
+import UniformTypeIdentifiers
 
 @main
 class AppDelegate: NSObject, NSApplicationDelegate {
@@ -42,6 +44,33 @@ class AppDelegate: NSObject, NSApplicationDelegate {
       let windowController = storyboard?.instantiateController(withIdentifier: "Welcome Window Controller") as? NSWindowController
       
       windowController?.showWindow(self)
+    }
+  }
+  
+  @IBAction func newDocument(_ sender: Any?) {
+    Task {
+      let panel = NSSavePanel()
+      panel.allowedContentTypes = [UTType("com.zehuachen-examples.book")!]
+        
+      let fileManager = FileManager.default
+    
+      if let window = NSApplication.shared.mainWindow {
+        let response = await panel.beginSheetModal(for: window)
+
+        switch response {
+        case .OK:
+          guard let url = panel.url else { return }
+          
+          let encoder = JSONEncoder()
+          let book = try! encoder.encode(Book())
+
+          guard fileManager.createFile(atPath: url.path, contents: book) else {
+            fatalError("Failed to create \(url.path)")
+          }
+        default:
+          break
+        }
+      }
     }
   }
 }

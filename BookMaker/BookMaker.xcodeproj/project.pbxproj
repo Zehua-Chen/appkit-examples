@@ -16,6 +16,7 @@
 		67633EC127E1483600BE36F1 /* Chapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67633EC027E1483600BE36F1 /* Chapter.swift */; };
 		67633EC327E14CBF00BE36F1 /* ChaptersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67633EC227E14CBF00BE36F1 /* ChaptersViewController.swift */; };
 		67633EC627E1706A00BE36F1 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67633EC427E1706A00BE36F1 /* WelcomeViewController.swift */; };
+		67786B2927E415E3002B98EB /* ChapterDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67786B2827E415E3002B98EB /* ChapterDocument.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		67633EC027E1483600BE36F1 /* Chapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chapter.swift; sourceTree = "<group>"; };
 		67633EC227E14CBF00BE36F1 /* ChaptersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChaptersViewController.swift; sourceTree = "<group>"; };
 		67633EC427E1706A00BE36F1 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		67786B2827E415E3002B98EB /* ChapterDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChapterDocument.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +84,7 @@
 				67633EBE27E1482900BE36F1 /* Book.swift */,
 				67633EAF27E1444400BE36F1 /* BookDocument.swift */,
 				67633EC027E1483600BE36F1 /* Chapter.swift */,
+				67786B2827E415E3002B98EB /* ChapterDocument.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -162,6 +165,7 @@
 				67633EAE27E1444400BE36F1 /* SplitViewController.swift in Sources */,
 				67633EAC27E1444400BE36F1 /* AppDelegate.swift in Sources */,
 				67633EB027E1444400BE36F1 /* BookDocument.swift in Sources */,
+				67786B2927E415E3002B98EB /* ChapterDocument.swift in Sources */,
 				67633EC627E1706A00BE36F1 /* WelcomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
