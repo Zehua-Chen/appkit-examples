@@ -65,12 +65,9 @@
 		67633EAA27E1444400BE36F1 /* BookMaker */ = {
 			isa = PBXGroup;
 			children = (
+				67786B2C27EBE839002B98EB /* ViewControllers */,
 				67633EBD27E1480800BE36F1 /* Models */,
 				67633EAB27E1444400BE36F1 /* AppDelegate.swift */,
-				67633EAD27E1444400BE36F1 /* SplitViewController.swift */,
-				67633EC227E14CBF00BE36F1 /* ChaptersViewController.swift */,
-				67786B2A27E43C89002B98EB /* ChapterViewController.swift */,
-				67633EC427E1706A00BE36F1 /* WelcomeViewController.swift */,
 				67633EB127E1444500BE36F1 /* Assets.xcassets */,
 				67633EB327E1444500BE36F1 /* Main.storyboard */,
 				67633EB627E1444500BE36F1 /* Info.plist */,
@@ -87,6 +84,17 @@
 				67786B2827E415E3002B98EB /* ChapterDocument.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		67786B2C27EBE839002B98EB /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				67633EAD27E1444400BE36F1 /* SplitViewController.swift */,
+				67633EC227E14CBF00BE36F1 /* ChaptersViewController.swift */,
+				67786B2A27E43C89002B98EB /* ChapterViewController.swift */,
+				67633EC427E1706A00BE36F1 /* WelcomeViewController.swift */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
