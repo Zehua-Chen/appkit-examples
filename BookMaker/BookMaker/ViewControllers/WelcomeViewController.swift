@@ -26,7 +26,7 @@ class WelcomeViewController: NSViewController {
     dataSource = NSTableViewDiffableDataSource<Section, URL>(tableView: tableView) {
         tableView, tableColumn, row, identifier in
       let view = tableView.makeView(withIdentifier: .init(rawValue: "Recent Item Cell View"), owner: nil) as! NSTableCellView
-      view.textField?.stringValue = identifier.path
+      view.textField?.stringValue = identifier.lastPathComponent
 
       return view
     }
