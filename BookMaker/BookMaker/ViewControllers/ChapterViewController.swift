@@ -11,6 +11,9 @@ class ChapterViewController: NSViewController {
   @IBOutlet var textView: NSTextView!
   
   var book: Book?
+  
+  fileprivate var _openedChapterObservation: NSKeyValueObservation?
+  
   var chapterDoc: ChapterDocument? {
     didSet {
       guard let chapterDoc = chapterDoc else { return }
@@ -22,33 +25,25 @@ class ChapterViewController: NSViewController {
     didSet {
       book = representedObject as? Book
       
-      book!.addObserver(
-        self, forKeyPath: #keyPath(Book.openedChapter), options: [.initial], context: nil)
-    }
-  }
-  
-  override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
-    switch keyPath {
-    case #keyPath(Book.openedChapter):
-      guard let book = book else { return }
-      guard let chapterURL = book.openedChapter else { return }
-      
-      view.window?.subtitle = chapterURL.deletingPathExtension().lastPathComponent
-      
-      let controller = NSDocumentController.shared
-      
-      controller.openDocument(withContentsOf: chapterURL, display: false) { doc, _, error in
-        if let error = error {
-          print(error)
-          return
-        }
+      _openedChapterObservation = book?.observe(\.openedChapter, options: [.initial]) { _, _ in
+        guard let book = self.book else { return }
+        guard let chapterURL = book.openedChapter else { return }
         
-        self.chapterDoc?.save(self)
-        self.chapterDoc?.close()
-        self.chapterDoc = doc as? ChapterDocument
+        self.view.window?.subtitle = chapterURL.deletingPathExtension().lastPathComponent
+        
+        let controller = NSDocumentController.shared
+        
+        controller.openDocument(withContentsOf: chapterURL, display: false) { doc, _, error in
+          if let error = error {
+            print(error)
+            return
+          }
+          
+          self.chapterDoc?.save(self)
+          self.chapterDoc?.close()
+          self.chapterDoc = doc as? ChapterDocument
+        }
       }
-    default:
-      break
     }
   }
 }
