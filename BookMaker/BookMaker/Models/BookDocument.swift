@@ -9,11 +9,19 @@ import Cocoa
 
 class BookDocument: NSDocument {
   
-  var content: Book = Book()
+  var content: Book = Book() {
+    didSet {
+      _chaptersObservation = content.observe(\.chapters) { _, _ in
+        self.updateChangeCount(.changeDone)
+      }
+    }
+  }
+  
+  fileprivate var _chaptersObservation: NSKeyValueObservation?
 
   override init() {
     super.init()
-    
+      
     content.fileURL = primaryPresentedItemURL
     content.folderURL = presentedItemURL
   }
@@ -58,11 +66,6 @@ class BookDocument: NSDocument {
 
   override func read(from data: Data, ofType typeName: String) throws {
     let decoder = JSONDecoder()
-//    let fileManager = FileManager.default
-    
-//    if !fileManager.fileExists(atPath: presentedItemURL!.path) {
-//      try fileManager.createDirectory(at: presentedItemURL!, withIntermediateDirectories: true)
-//    }
     
     content = try decoder.decode(Book.self, from: data)
   }
