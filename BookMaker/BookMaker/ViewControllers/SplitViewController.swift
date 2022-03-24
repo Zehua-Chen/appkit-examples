@@ -29,16 +29,6 @@ class SplitViewController: NSSplitViewController {
     }
   }
   
-  func save() {
-    guard let book = view.window?.windowController?.document as? BookDocument else { return }
-    
-    book.autosave(withImplicitCancellability: false) { error in
-      if let error = error {
-        debugPrint(error)
-      }
-    }
-  }
-  
   @IBAction func newChapter(_ sender: Any?) {
     let manager = FileManager.default
     
@@ -68,7 +58,6 @@ class SplitViewController: NSSplitViewController {
         }
       
         book.chapters.append(url)
-        save()
       default:
         break
       }
@@ -89,7 +78,6 @@ class SplitViewController: NSSplitViewController {
         guard let url = panel.url else { return }
         
         book.chapters.append(url)
-        save()
       default:
         break
       }
