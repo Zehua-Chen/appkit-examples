@@ -14,89 +14,25 @@ class ChaptersViewController: NSViewController {
   
   var book: Book?
   
+  fileprivate var _chaptersObservation: NSKeyValueObservation?
+  
   override var representedObject: Any? {
     didSet {
       book = representedObject as? Book
-      book?.addObserver(self, forKeyPath: #keyPath(Book.chapters), options: [.initial], context: nil)
+      
+      _chaptersObservation = book?.observe(\.chapters, options: [.initial]) { _, _ in
+        self.chaptersList.reloadData()
+      }
     }
   }
   
-  func save() {
-    NSApplication.shared
-      .sendAction(#selector(BookDocument.save(_:)), to: nil, from: self)
-  }
+  // MARK: - Overrides
   
   override func viewDidLoad() {
     super.viewDidLoad()
   }
-  
-  @MainActor
-  override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
-    switch keyPath {
-    case #keyPath(Book.chapters):
-      chaptersList.reloadData()
-    default:
-      break
-    }
-  }
-  
-  @IBAction func newChapter(_ sender: Any?) {
-    let manager = FileManager.default
-    
-    if let folderURL = book?.folderURL {
-      if !manager.fileExists(atPath: folderURL.path) {
-        try! manager.createDirectory(at: folderURL, withIntermediateDirectories: true)
-      }
-    }
-    
-    Task {
-      let savePanel = NSSavePanel()
-      savePanel.directoryURL = book!.folderURL!
-      
-      let fileManager = FileManager.default
-      
-      savePanel.allowedContentTypes = [UTType("com.zehuachen-examples.chapter")!]
 
-      let response = await savePanel.beginSheetModal(for: view.window!)
-      
-      switch response {
-      case .OK:
-        guard let url = savePanel.url else { return }
-        guard let book = book else { return }
-        
-        guard fileManager.createFile(atPath: url.path, contents: nil) else {
-          fatalError()
-        }
-      
-        book.chapters.append(url)
-        save()
-      default:
-        break
-      }
-    }
-  }
-  
-  @IBAction func openChapter(_ sender: Any?) {
-    Task {
-      guard let book = book else { return }
-      
-      let panel = NSOpenPanel()
-      panel.directoryURL = book.folderURL
-      
-      let response = await panel.beginSheetModal(for: view.window!)
-      
-      switch response {
-      case .OK:
-        guard let url = panel.url else { return }
-        
-        
-        book.chapters.append(url)
-        save()
-      default:
-        break
-      }
-    }
-  }
+  // MARK: - IBActions
 }
 
 //MARK: - NSOutlineViewDataSource
